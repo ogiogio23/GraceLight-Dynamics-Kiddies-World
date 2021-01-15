@@ -1,0 +1,95 @@
+﻿@model GldKiddiesWorld.Models.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item">Categories</li>
+        <li class="breadcrumb-item active">Add New Product</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table mr-1"></i>
+            Add New Product
+
+        </div>
+        <div class="card-body">
+            <form action="/Admin/AddProduct" method="post" enctype="multipart/form-data">
+                <input name="__RequestVerificationToken" type="hidden" value="dTeO5quJpUHpfQo5fN7QRkdtsg_JoM6tjJVS9wuWG26H6-coMZb4aEGAiy65HTHhZeiun0YlVnjfldbzGsZu2eehbH_gxwjC-LJ5jZ8hO5Q1" />
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="CatId">Product Name</label>
+                        <input class="form-control text-box single-line" data-val="true" data-val-length="Minimum 3 and minimum 5 and maximum 100 charaters are allwed" data-val-length-max="100" data-val-length-min="3" data-val-required="Product Name is Required" id="ProductName" name="ProductName" type="text" placeholder="Enter Product Name" value="" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="ProductName" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="CatId">Category Name</label>
+                        @Html.DropDownListFor(item => Model.CatId, ViewBag.CatId as SelectList, "-- Select --", htmlAttributes: new { @class = "form-control" })
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CatId" data-valmsg-replace="true"></span></div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="ProductImageUrl1">Product Image Front View</label>
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="The Product Image1 field is required." id="ProductImageUrl1" name="ProductImageUrl1" type="file" value="" accept="image/*"/>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="ProductImageUrl1" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="ProductImageUrl2">Product Image Side View</label>
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="The Product Image1 field is required." id="ProductImageUrl2" name="ProductImageUrl2" type="file" value="" accept="image/*"/>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="ProductImageUrl2" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="ProductImageUrl3">Product Image Back View</label>
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="The Product Image1 field is required." id="ProductImageUrl3" name="ProductImageUrl3" type="file" value="" accept="image/*" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="ProductImageUrl3" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="Price">Price</label>
+                        <input class="form-control text-box single-line" data-val="true" data-val-number="The field Price must be a number." data-val-range="The field Price must be between 1 and 1000000." data-val-range-max="1000000" data-val-range-min="1" data-val-required="The Price field is required." id="Price" name="Price" type="text" value="" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Price" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="Description">Description</label>
+                        <textarea class="form-control text-box single-line" id="Description" name="Description" type="" value=""></textarea>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="small mb-1" for="Quantity">Quantity</label>
+                        <input class="form-control text-box single-line" data-val="true" data-val-number="The field Quantity must be a number." data-val-required="The Quantity field is required." id="Quantity" name="Quantity" type="number" value="" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Quantity" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mt-4 mb-3"><input type="submit" value="Add Product" class="btn btn-primary btn-block" /></div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+

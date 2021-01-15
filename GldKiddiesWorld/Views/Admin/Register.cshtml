@@ -1,0 +1,69 @@
+﻿@model GldKiddiesWorld.Models.Admin
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_AdminLoginLayout.cshtml";
+}
+
+
+<div id="layoutAuthentication_content">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                        <div class="card-body">
+                            <form action="/Admin/Register" method="post">
+                                <input name="__RequestVerificationToken" type="hidden" value="OZF3YNcaO1RHOrVCnAVmtwcAB4WScjfOgiA6wnbMRvD6KYXo4oTqIlRKqZtGFcCX7H9DtcpkER_LBSpKvWY882AFK8hiaSLGf5FUzOs2ums1" />
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="FirstName">First Name</label>
+                                                <input class="form-control py-4" data-val="true" data-val-regex="Invalid Name" data-val-regex-pattern="^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$" data-val-required="The First Name field is required." id="FirstName" name="FirstName" type="text" value="" placeholder="Enter first name" required="required" />
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="LastName">Last Name</label>
+                                                <input class="form-control py-4" data-val="true" data-val-regex="Invalid Name" data-val-regex-pattern="^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$" data-val-required="The Last Name field is required." id="LastName" name="LastName" type="text" value="" placeholder="Enter last name" required="required"/>
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="Email">Email</label>
+                                        <input class="form-control py-4" data-val="true" data-val-regex="Invalid Email" data-val-regex-pattern="([\w\.\-_]+)?\w+@@[\w-_]+(\.\w+){1,}" data-val-required="The Email field is required." id="Email" name="Email" type="text" value="" aria-describedby="emailHelp" placeholder="Enter email address" required="required"/>
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="Password">Password</label>
+                                                <input class="form-control py-4" data-val="true" data-val-regex="Password must contain atleast one uppercase, lowercase, number, special character &amp; eight characters!" data-val-regex-pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" data-val-required="The Password field is required." id="Password" name="Password" type="password" value="" placeholder="Enter password" />
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="ConfirmPassword">Confirm Password</label>
+                                                <input class="form-control py-4" data-val="true" data-val-equalto="The Password and Confirmation Password do not match." data-val-equalto-other="*.Password" data-val-required="The Comfirm Password field is required." id="ConfirmPassword" name="ConfirmPassword" type="password" value="" placeholder="Confirm password" />
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 mb-0"><input type="submit" value="Create Account" class="btn btn-primary btn-block" /></div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center">
+                            <div class="small"><a href="/Admin/login">Have an account? Go to login</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+

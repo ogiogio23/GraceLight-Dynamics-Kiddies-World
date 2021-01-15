@@ -1,0 +1,79 @@
+﻿@model IEnumerable<GldKiddiesWorld.Models.Category>
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<style>
+    .mg{
+        margin-left: 20px;
+    }
+</style>*@
+
+
+<div class="container-fluid">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Categories</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table mr-1"></i>
+            Category Details
+            <a href="/Admin/Addcategory" class="btn btn-info" style="float:right;">
+                <span class="fa fa-plus"></span> Add New
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" style=width:"100%"; cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Category Name</th>
+                            <th>Date Created</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Category Name</th>
+                            <th>Date Created</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateCreated)
+                                </td>
+                                <td>
+                                    <span>
+                                        @Html.ActionLink("Edit", "EditCategory", new { id = item.CatId })
+                                    </span>
+                                    |
+                                    <span>
+                                        @Html.ActionLink("Delete", "DeleteCategory", new { id = item.CatId })
+                                    </span>
+                                    @*@Html.ActionLink("Details", "Details", new { id = item.CatId }) |*@
+                                </td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

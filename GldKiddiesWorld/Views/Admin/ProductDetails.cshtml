@@ -1,0 +1,106 @@
+﻿@model GldKiddiesWorld.Models.Product
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item">Categories</li>
+        <li class="breadcrumb-item active">Product Details</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table mr-1"></i>
+            Product Details
+
+        </div>
+        <div class="card-body">
+
+        <div>
+            <dl class="dl-horizontal">
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.Category.CategoryName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Category.CategoryName)
+                </dd>*@
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductImageUrl1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductImageUrl1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductImageUrl2)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductImageUrl2)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductImageUrl3)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductImageUrl3)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateCreated)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateCreated)
+                </dd>
+
+            </dl>
+
+            <a href="/Admin/product" class="btn btn-info"><span class="fa fa-backward"></span> Back</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
